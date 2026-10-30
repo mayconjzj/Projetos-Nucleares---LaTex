@@ -7,6 +7,8 @@
 \usepackage{setspace}
 \onehalfspacing
 \usepackage{hyperref}
+\usepackage[backend=biber,style=authoryear,sorting=nyt]{biblatex}
+\addbibresource{referencias.bib}
 \usepackage{pgfplots}
 \pgfplotsset{compat=1.18}
 \title{Ações e fundos imobiliários no Brasil: acumulação patrimonial e geração potencial de renda}
@@ -121,7 +123,7 @@ O retorno real será calculado descontando o IPCA acumulado:
 \end{equation}
 
 \subsection{Fontes e validação}
-Serão priorizadas fontes primárias e bases com metodologia documentada, incluindo B3, CVM, informes de administradores e provedores de dados. A base Dados B3 declara combinar cotações da B3 e proventos para estimar retorno total. O reinvestimento dos proventos é relevante porque pode alterar substancialmente o resultado em comparação com a simples variação de preço. Cada observação deverá registrar fonte, data de consulta, janela de cálculo e eventos corporativos.
+Serão priorizadas fontes primárias e bases com metodologia documentada, incluindo B3, CVM, informes de administradores e provedores de dados. A base Dados B3 declara combinar cotações da B3 e proventos para estimar retorno total \parencite{dadosb3}. O reinvestimento dos proventos é relevante porque pode alterar substancialmente o resultado em comparação com a simples variação de preço \parencite{b3reinvestimento}. Cada observação deverá registrar fonte, data de consulta, janela de cálculo e eventos corporativos.
 
 \section{Resultados}
 Os resultados numéricos ainda não foram preenchidos. Não serão inseridos valores sem validação da série de retorno total e do DY na mesma data de referência. A tabela abaixo será completada após a auditoria dos dados.
@@ -178,4 +180,5 @@ O retorno histórico não garante desempenho futuro. O DY é retrospectivo. Cust
 \section{Conclusão}
 O estudo estabelece uma metodologia comum para comparar ações e FIIs a partir do retorno total, crescimento patrimonial e renda potencial. A conclusão empírica será escrita após a consolidação e auditoria das séries históricas, evitando transformar dados incompletos em resultados aparentemente precisos.
 
+\printbibliography
 \end{document}
