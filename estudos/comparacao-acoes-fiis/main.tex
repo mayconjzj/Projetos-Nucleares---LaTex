@@ -1,68 +1,239 @@
 \documentclass[11pt,a4paper]{article}
+
 \usepackage[utf8]{inputenc}
+
 \usepackage[T1]{fontenc}
+
 \usepackage[brazil]{babel}
-\usepackage{amsmath,booktabs,longtable}
-\usepackage[a4paper,margin=2cm]{geometry}
-\usepackage[backend=biber,style=authoryear]{biblatex}
-\addbibresource{referencias.bib}
-\title{Ações e fundos imobiliários: patrimônio e renda em 10 e 20 anos}
+
+\usepackage{lmodern}
+
+\usepackage{microtype}
+
+\usepackage{amsmath,amssymb,booktabs,longtable,array}
+
+\usepackage[a4paper,margin=1.65cm]{geometry}
+
+\usepackage{hyperref}
+
+\hypersetup{colorlinks=true,linkcolor=blue,urlcolor=blue,citecolor=blue}
+
+\usepackage{siunitx}
+
+\sisetup{output-decimal-marker={,}}
+
+\setlength{\tabcolsep}{3pt}
+
+\renewcommand{\arraystretch}{1.12}
+
+\title{Ações e fundos imobiliários no Brasil: acumulação patrimonial e renda potencial em horizontes de 10 e 20 anos}
+
 \author{Maycon Douglas Alves Moraes}
+
 \date{30 de outubro de 2026}
+
 \begin{document}
+
 \maketitle
+
 \begin{abstract}
-Compara-se um aporte hipotético de R$ 10.000,00 em quinze ações e quinze fundos imobiliários. Para dez anos, calculam-se patrimônio final e renda potencial pela aplicação do DY recente. O horizonte de vinte anos é discutido, mas não recebe valores inventados: as fontes consultadas não oferecem retorno total homogêneo e auditável para os quinze papéis, e não há quinze FIIs com vinte anos completos de histórico individual comparável.
+
+Este artigo compara quinze ações brasileiras e quinze fundos imobiliários (FIIs) por meio de uma simulação de aporte único de R$ 10.000,00 em cada ativo. Para a janela de dez anos, apresenta-se o retorno total acumulado, o patrimônio hipotético final e a renda anual e mensal que esse patrimônio produziria se remunerado pelo dividend yield (DY) recente. O trabalho também examina a janela de vinte anos. Os dados reunidos nesta versão permitem calcular os resultados de dez anos para as quinze ações e doze FIIs; três FIIs permanecem sem valores validados. Não foi possível obter séries homogêneas de retorno total de vinte anos para as amostras completas. Em vez de preencher lacunas com extrapolações, o artigo explicita os limites dos dados.
+
 \end{abstract}
-\section{Metodologia}
-Para retorno total acumulado R_n, o patrimônio final é C_n=10.000(1+R_n). A taxa anual composta é CAGR=(C_n/10.000)^{1/n}-1. A renda estimada é D_ano=C_n DY_12m e D_mês=D_ano/12. O DY é retrospectivo, não uma garantia. A renda calculada aplica o yield atual ao patrimônio final e não representa os proventos efetivamente recebidos durante a década.
-As séries de retorno de ações foram extraídas principalmente do Meus Dividendos, com complementos do Dados B3. O Dados B3 informa combinar cotações da B3 e proventos, com ajustes para eventos corporativos \parencite{dadosb3}. As páginas do Meus Dividendos apresentam a série de cotação e proventos por ativo \parencite{meusdividendos}. Os DY de ações usam principalmente o painel Leitura Singular, referência 29/10/2026. Para FIIs, retornos e rendimentos foram extraídos das páginas individuais do Meus Dividendos, consultadas em 30/10/2026.
-\section{Ações: simulação de dez anos}
-Aporte de R$ 10.000,00 em aproximadamente outubro de 2016. Valores em reais, arredondados.
-\begin{longtable}{lrrrrr}
-\toprule Código & Retorno & Patrimônio & DY & Renda anual & Renda mensal\\
+
+\noindent\textbf{Palavras-chave:} ações; fundos imobiliários; retorno total; reinvestimento de proventos; dividend yield; patrimônio; renda.
+
+\tableofcontents
+
+\section{Introdução}
+
+A comparação entre ações e fundos imobiliários não deve se limitar à variação da cotação. Uma empresa pode distribuir dividendos relevantes mesmo quando sua cotação cresce pouco; de modo semelhante, um FII pode distribuir rendimentos elevados enquanto sua cota perde valor. A métrica adequada para avaliar a acumulação patrimonial é o retorno total, que considera tanto a variação do preço quanto os proventos recebidos e reinvestidos.
+
+O objetivo deste estudo é responder a duas perguntas. Primeiro: quanto teria se transformado um aporte de R$ 10.000,00 feito há dez anos em cada ativo, supondo reinvestimento dos proventos? Segundo: qual renda anual e mensal esse patrimônio poderia gerar hoje, caso fosse remunerado pelo DY recente? A mesma análise é desejável para vinte anos, mas depende da existência de séries históricas completas e comparáveis.
+
+\section{Definições e metodologia}
+
+\subsection{Aporte e retorno total}
+
+Considera-se um aporte inicial de R$ 10.000,00, sem novos aportes, realizado aproximadamente em outubro de 2016. Seja $R_{10}$ o retorno total acumulado na janela, escrito em forma decimal. O patrimônio hipotético ao final do período é
+
+\[ C_{10}=10.000(1+R_{10}). \]
+
+O retorno total deve incorporar a valorização ou desvalorização da cota/ação e os proventos reinvestidos, além dos ajustes pertinentes a eventos corporativos. Os números de retorno foram reunidos a partir das páginas individuais do Meus Dividendos e, para alguns papéis, complementados por Dados B3. As páginas consultadas não constituem uma auditoria independente de cada operação de reinvestimento; diferenças de metodologia, datas de corte e tratamento de eventos podem alterar os resultados.
+
+\subsection{Taxa anual composta}
+
+Para facilitar a comparação entre ativos, calcula-se a taxa anual composta (CAGR):
+
+\[ CAGR=\left(\frac{C_{10}}{10.000}\right)^{1/10}-1. \]
+
+\subsection{Renda potencial pelo DY recente}
+
+Se $DY_{12m}$ representa o dividend yield dos últimos doze meses, em forma decimal, a renda estimada é
+
+\[ D_{ano}=C_{10}\cdot DY_{12m},\qquad D_{mês}=\frac{D_{ano}}{12}. \]
+
+Essa conta responde quanto o patrimônio final produziria se o DY recente se repetisse. Não representa os proventos efetivamente recebidos durante os dez anos, nem garante que os pagamentos futuros permaneçam nesse nível. O DY pode cair, subir ou ser afetado por pagamentos extraordinários.
+
+\subsection{Horizonte de vinte anos}
+
+Uma simulação histórica de vinte anos exige dados contínuos de preços, dividendos, juros sobre capital próprio, rendimentos, amortizações, desdobramentos, grupamentos, incorporações, liquidações e pagamentos finais entre outubro de 2006 e outubro de 2026. A base consultada não forneceu retorno total de vinte anos, calculado de maneira homogênea, para os quinze papéis. No universo de FIIs, parte dos fundos foi constituída depois de 2006, de modo que nem sequer existia um ativo negociável durante toda a janela.
+
+Por esse motivo, não se extrapola o CAGR de dez anos para simular vinte anos. Essa extrapolação seria um cenário matemático hipotético, não uma resposta à pergunta histórica “o que teria acontecido”. Também não se mistura retorno total de dez anos com retorno baseado apenas na cotação em vinte anos, pois isso compararia métricas diferentes.
+
+\section{Amostra de ativos}
+
+\subsection{Ações}
+
+Foram selecionadas PETR4, VALE3, ITUB4, BBDC4, CMIG4, TAEE11, EGIE3, CPFE3, WEGE3, ABEV3, ITSA4, BBSE3, VIVT3, GGBR4 e PSSA3. A seleção procura abranger setores distintos e empresas com histórico relevante de distribuição de proventos. Ela não representa uma classificação prospectiva de qualidade nem elimina viés de seleção retrospectiva.
+
+\subsection{Fundos imobiliários}
+
+Foram considerados HGLG11, KNCR11, KNRI11, MXRF11, HGBS11, BRCR11, JSRE11, RNGO11, FIIB11, HTMX11, BCRI11, KNIP11, HGRE11, HGCR11 e SDIL11. Os três últimos permanecem listados para completar a amostra pretendida, mas não receberam valores numéricos porque o retorno total e o DY não foram confirmados na mesma extração. A presença de um ticker na amostra não significa que seus dados estejam validados.
+
+\section{Resultados para ações: janela de dez anos}
+
+A Tabela 1 apresenta o resultado de um aporte hipotético de R$ 10.000,00 em cada ação. O patrimônio final foi calculado a partir do retorno total acumulado. A renda anual e mensal é uma estimativa que aplica o DY recente ao patrimônio final. Valores monetários estão arredondados a centavos.
+
+\small
+
+\begin{longtable}{llrrrrrr}
+
+\caption{Simulação de R$ 10.000,00 em ações por dez anos}\\
+
+\toprule
+
+Ticker & Empresa & Retorno & CAGR & Patrimônio & DY atual & Renda/ano & Renda/mês \\
+
 \midrule
-PETR4 & 614,83\% & 71.483 & 6,89\% & 4.925 & 410\\
-VALE3 & 578,73\% & 67.873 & 9,14\% & 6.204 & 517\\
-ITUB4 & 193,03\% & 29.303 & 7,96\% & 2.333 & 194\\
-BBDC4 & 67,81\% & 16.781 & 11,00\% & 1.846 & 154\\
-CMIG4 & 253,04\% & 35.304 & 11,24\% & 3.968 & 331\\
-TAEE11 & 217,51\% & 31.751 & 7,57\% & 2.404 & 200\\
-EGIE3 & 115,40\% & 21.540 & 4,10\% & 883 & 74\\
-CPFE3 & 151,34\% & 25.134 & 8,69\% & 2.184 & 182\\
-WEGE3 & 794,90\% & 89.490 & 4,24\% & 3.794 & 316\\
-ABEV3 & 8,12\% & 10.812 & 5,56\% & 601 & 50\\
-ITSA4 & 250,40\% & 35.040 & 8,86\% & 3.105 & 259\\
-BBSE3 & 130,56\% & 23.056 & 10,96\% & 2.527 & 211\\
-VIVT3 & 115,34\% & 21.534 & 4,29\% & 924 & 77\\
-GGBR4 & 401,83\% & 50.183 & 2,49\% & 1.250 & 104\\
-PSSA3 & 309,28\% & 40.928 & 6,42\% & 2.628 & 219\\
-\bottomrule
-\end{longtable}
-\section{FIIs: simulação de dez anos}
-Doze fundos têm retorno e DY consolidados nesta versão. HGRE11, HGCR11 e SDIL11 ficam pendentes de validação.
-\begin{longtable}{lrrrrr}
-\toprule Código & Retorno & Patrimônio & DY & Renda anual & Renda mensal\\
+
+\endfirsthead
+
+\toprule Ticker & Empresa & Retorno & CAGR & Patrimônio & DY atual & Renda/ano & Renda/mês \\
+
 \midrule
-HGLG11 & 140,95\% & 24.095 & 8,20\% & 1.976 & 165\\
-KNCR11 & 78,03\% & 17.803 & 15,10\% & 2.688 & 224\\
-KNRI11 & 66,45\% & 16.645 & 7,90\% & 1.315 & 110\\
-MXRF11 & 115,69\% & 21.569 & 13,20\% & 2.847 & 237\\
-HGBS11 & 62,99\% & 16.299 & 9,62\% & 1.568 & 131\\
-BRCR11 & 13,26\% & 11.326 & 5,90\% & 668 & 56\\
-JSRE11 & 23,80\% & 12.380 & 5,80\% & 718 & 60\\
-RNGO11 & 41,15\% & 14.115 & 8,84\% & 1.248 & 104\\
-FIIB11 & 178,09\% & 27.809 & 8,20\% & 2.279 & 190\\
-HTMX11 & 97,35\% & 19.735 & 11,26\% & 2.222 & 185\\
-BCRI11 & 47,09\% & 14.709 & 9,76\% & 1.436 & 120\\
-KNIP11 & 68,84\% & 16.884 & 11,00\% & 1.857 & 155\\
+
+\endhead
+
+PETR4 & Petrobras & 614,83\% & 21,74\% & 71.483,00 & 6,89\% & 4.925,18 & 410,43 \\
+VALE3 & Vale & 578,73\% & 21,11\% & 67.873,00 & 9,14\% & 6.203,59 & 516,97 \\
+ITUB4 & Itaú Unibanco & 193,03\% & 11,35\% & 29.303,00 & 7,96\% & 2.332,52 & 194,38 \\
+BBDC4 & Bradesco & 67,81\% & 5,31\% & 16.781,00 & 11,00\% & 1.845,91 & 153,83 \\
+CMIG4 & Cemig & 253,04\% & 13,39\% & 35.304,00 & 11,24\% & 3.968,17 & 330,68 \\
+TAEE11 & Taesa & 217,51\% & 12,31\% & 31.751,00 & 7,57\% & 2.403,55 & 200,30 \\
+EGIE3 & Engie Brasil & 115,40\% & 7,99\% & 21.540,00 & 4,10\% & 883,14 & 73,59 \\
+CPFE3 & CPFL Energia & 151,34\% & 9,67\% & 25.134,00 & 8,69\% & 2.184,14 & 182,01 \\
+WEGE3 & WEG & 794,90\% & 24,20\% & 89.490,00 & 4,24\% & 3.794,38 & 316,20 \\
+ABEV3 & Ambev & 8,12\% & 0,78\% & 10.812,00 & 5,56\% & 601,15 & 50,10 \\
+ITSA4 & Itaúsa & 250,40\% & 13,37\% & 35.040,00 & 8,86\% & 3.104,54 & 258,71 \\
+BBSE3 & BB Seguridade & 130,56\% & 8,72\% & 23.056,00 & 10,96\% & 2.526,94 & 210,58 \\
+VIVT3 & Telefônica Brasil & 115,34\% & 7,98\% & 21.534,00 & 4,29\% & 923,81 & 76,98 \\
+GGBR4 & Gerdau & 401,83\% & 17,45\% & 50.183,00 & 2,49\% & 1.249,56 & 104,13 \\
+PSSA3 & Porto Seguro & 309,28\% & 15,10\% & 40.928,00 & 6,42\% & 2.627,58 & 218,96 \\
+
 \bottomrule
+
 \end{longtable}
-\section{Horizonte de vinte anos}
-A janela 30/10/2006--29/10/2026 exige séries contínuas de preços, proventos, eventos corporativos, amortizações e liquidações. As fontes consultadas não disponibilizaram retorno total uniforme para os quinze papéis. Para FIIs, diversos fundos sequer existiam em 2006. Misturar retorno total de dez anos com retorno apenas de preço em vinte anos seria inconsistente. Portanto, o resultado correto nesta versão é: não calculável com dados comparáveis validados. Extrapolar o CAGR de dez anos seria um cenário hipotético, não resultado histórico.
-\section{Interpretação e limitações}
-Entre as ações com dados consolidados, WEGE3 apresenta o maior patrimônio hipotético, seguida por PETR4 e VALE3. Entre os FIIs com números, HGLG11, MXRF11 e FIIB11 apresentam os maiores patrimônios finais. O DY atual pode alterar a ordem da renda potencial: o ativo que mais valorizou não precisa ser o que mais renda gera. A amostra é retrospectiva, sujeita a viés de seleção e sobrevivência. Valores nominais, sem custos e tributos; DY não garante renda futura.
+
+\normalsize
+
+\section{Resultados para FIIs: janela de dez anos}
+
+A Tabela 2 apresenta os doze fundos para os quais foi possível reunir retorno total e DY na consolidação atual. HGRE11, HGCR11 e SDIL11 são mostrados como dados pendentes, sem atribuição artificial de retorno, patrimônio ou renda.
+
+\small
+
+\begin{longtable}{llrrrrrr}
+
+\caption{Simulação de R$ 10.000,00 em FIIs por dez anos}\\
+
+\toprule
+
+Ticker & Fundo & Retorno & CAGR & Patrimônio & DY atual & Renda/ano & Renda/mês \\
+
+\midrule
+
+\endfirsthead
+
+\toprule Ticker & Fundo & Retorno & CAGR & Patrimônio & DY atual & Renda/ano & Renda/mês \\
+
+\midrule
+
+\endhead
+
+HGLG11 & Pátria Logística & 140,95\% & 9,16\% & 24.095,00 & 8,20\% & 1.975,79 & 164,65 \\
+KNCR11 & Kinea Rendimentos & 78,03\% & 5,95\% & 17.803,00 & 15,10\% & 2.688,25 & 224,02 \\
+KNRI11 & Kinea Renda Imobiliária & 66,45\% & 5,23\% & 16.645,00 & 7,90\% & 1.314,96 & 109,58 \\
+MXRF11 & Maxi Renda & 115,69\% & 7,99\% & 21.569,00 & 13,20\% & 2.847,11 & 237,26 \\
+HGBS11 & Hedge Brasil Shopping & 62,99\% & 5,02\% & 16.299,00 & 9,62\% & 1.567,96 & 130,66 \\
+BRCR11 & BTG Pactual Corporate Office & 13,26\% & 1,25\% & 11.326,00 & 5,90\% & 668,23 & 55,69 \\
+JSRE11 & JS Real Estate & 23,80\% & 2,16\% & 12.380,00 & 5,80\% & 718,04 & 59,84 \\
+RNGO11 & Rio Negro & 41,15\% & 3,51\% & 14.115,00 & 8,84\% & 1.247,77 & 103,98 \\
+FIIB11 & Industrial do Brasil & 178,09\% & 10,78\% & 27.809,00 & 8,20\% & 2.280,34 & 190,03 \\
+HTMX11 & Hotel Maxinvest & 97,35\% & 7,04\% & 19.735,00 & 11,26\% & 2.222,16 & 185,18 \\
+BCRI11 & Banestes Recebíveis & 47,09\% & 3,96\% & 14.709,00 & 9,76\% & 1.435,60 & 119,63 \\
+KNIP11 & Kinea Índices de Preços & 68,84\% & 5,40\% & 16.884,00 & 11,00\% & 1.857,24 & 154,77 \\
+HGRE11 & Pátria Escritórios & -- & -- & -- & -- & -- & -- \\
+HGCR11 & Pátria Recebíveis & -- & -- & -- & -- & -- & -- \\
+SDIL11 & SDI Logística Rio & -- & -- & -- & -- & -- & -- \\
+
+\bottomrule
+
+\end{longtable}
+
+\normalsize
+
+\section{Leitura dos resultados}
+
+\subsection{Ações}
+
+Entre as ações da amostra, WEGE3 apresenta o maior patrimônio hipotético, cerca de R$ 89,5 mil, a partir de R$ 10 mil investidos. PETR4 e VALE3 aparecem em seguida, com aproximadamente R$ 71,5 mil e R$ 67,9 mil. Isso não significa que essas empresas pudessem ser identificadas antecipadamente como vencedoras: a seleção atual é retrospectiva e está sujeita a viés de sobrevivência e de escolha.
+
+A renda estimada não segue necessariamente a mesma ordem do patrimônio. VALE3, por exemplo, apresenta renda mensal estimada superior à de WEGE3 devido ao DY utilizado na simulação. PETR4 também combina patrimônio elevado com DY expressivo. Portanto, valorização histórica e renda potencial são dimensões distintas.
+
+\subsection{Fundos imobiliários}
+
+Entre os FIIs com números consolidados, FIIB11, HGLG11 e MXRF11 apresentam os maiores patrimônios hipotéticos. Em renda mensal estimada, MXRF11 e KNCR11 se destacam em razão do DY utilizado. Esses resultados não devem ser interpretados como indicação de que o mesmo rendimento será mantido no futuro.
+
+A diferença entre retorno patrimonial e distribuição é especialmente importante nos FIIs. Um fundo pode distribuir rendimentos elevados e, simultaneamente, apresentar crescimento baixo ou negativo da cota. Avaliar somente o rendimento mensal pode ocultar perda de valor do capital investido.
+
+\section{O que se pode afirmar sobre vinte anos}
+
+A análise de vinte anos permanece sem resultado numérico nesta versão. Não foi obtida uma série comparável de retorno total para os quinze ativos de cada classe. A limitação é mais forte nos FIIs: não é correto simular um fundo antes de sua constituição, nem preencher o período anterior à listagem com o desempenho de outro fundo.
+
+Para concluir essa etapa com rigor, seria necessário reconstruir, ativo por ativo, a série de preços ajustados e todos os proventos desde outubro de 2006. Em fundos encerrados ou incorporados, seria necessário contabilizar também os pagamentos de liquidação ou a conversão das cotas. Sem isso, qualquer patrimônio de vinte anos seria uma estimativa não observada. O artigo, portanto, registra “não calculável com os dados comparáveis validados” em vez de apresentar números fictícios.
+
+\section{Limitações do estudo}
+
+\begin{enumerate}
+
+\item Os valores são nominais e não descontam inflação, custos de negociação, impostos ou taxas.
+
+\item O DY recente é uma fotografia retrospectiva e pode conter pagamentos extraordinários; não é promessa de renda futura.
+
+\item As fontes consultadas podem usar datas de corte e critérios diferentes para proventos, amortizações e eventos corporativos.
+
+\item O retorno total depende da hipótese de reinvestimento dos proventos. O resultado real de um investidor pode divergir conforme datas, preços e custos do reinvestimento.
+
+\item A amostra de ativos conhecidos atualmente pode gerar viés de sobrevivência e não representa todos os ativos que existiam no início do período.
+
+\item Três FIIs não têm valores numéricos validados nesta consolidação.
+
+\item A janela de vinte anos não foi calculada por falta de séries homogêneas verificadas.
+
+\end{enumerate}
+
 \section{Conclusão}
-A janela de dez anos permite comparar patrimônio e renda potencial com os dados disponíveis. A janela de vinte anos não foi preenchida porque as séries comparáveis necessárias não foram validadas para quinze ativos de cada classe. Essa limitação é preferível a publicar extrapolações como resultados históricos.
-\printbibliography
+
+A simulação de dez anos mostra que o reinvestimento de proventos, combinado à valorização dos ativos, pode produzir diferenças expressivas no patrimônio acumulado. Nas ações selecionadas, WEGE3, PETR4 e VALE3 lideram o patrimônio hipotético. Entre os FIIs com dados disponíveis, FIIB11, HGLG11 e MXRF11 apresentam os maiores valores. A renda potencial, por sua vez, depende também do DY recente e não acompanha necessariamente a ordem de valorização.
+
+A pergunta de vinte anos é importante, mas não pode ser respondida com os dados comparáveis reunidos até aqui. A conclusão metodologicamente correta é não publicar um valor até que a série completa de preços, proventos e eventos corporativos seja reconstruída. A ausência de um número validado é uma limitação do estudo, não uma autorização para extrapolar.
+
+\section*{Fontes de dados e referências}
+
+As séries históricas foram consultadas nas páginas individuais do Meus Dividendos (ações e FIIs), disponível em \url{https://www.meusdividendos.com/}. Para parte das ações, foram utilizados também os indicadores do Dados B3, disponível em \url{https://dadosb3.com/}, cuja metodologia informa utilizar cotações da B3 e proventos. Os DY de ações foram complementados pelo painel Leitura Singular, disponível em \url{https://leiturasingular.com.br/ativos/}. As datas de consulta registradas na consolidação são 29 e 30 de outubro de 2026.
+
+Como referência metodológica complementar sobre reinvestimento de proventos, consultaram-se materiais da B3 sobre proventos e estudos publicados pela InfoMoney com dados da Economatica. As referências servem de contexto metodológico; os resultados das tabelas devem ser conferidos nas séries individuais dos ativos antes de qualquer uso decisório.
+
 \end{document}
