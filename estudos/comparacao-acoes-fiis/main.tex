@@ -1,4 +1,181 @@
-\documentclass{article}
+\documentclass[12pt,a4paper]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[brazil]{babel}
+\usepackage{amsmath,amssymb,booktabs,longtable}
+\usepackage[a4paper,margin=2.5cm]{geometry}
+\usepackage{setspace}
+\onehalfspacing
+\usepackage{hyperref}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+\title{Ações e fundos imobiliários no Brasil: acumulação patrimonial e geração potencial de renda}
+\author{Maycon Douglas Alves Moraes}
+\date{30 de outubro de 2026}
 \begin{document}
-Teste
+\maketitle
+\begin{abstract}
+Este artigo propõe uma comparação quantitativa entre quinze ações e quinze fundos de investimento imobiliário negociados na B3. O foco é a acumulação patrimonial por meio do retorno total, com reinvestimento de proventos, e a estimativa de renda potencial ao final do período. O período-alvo é outubro de 2016 a outubro de 2026. Os resultados numéricos serão incluídos somente após a validação das séries históricas, dos eventos corporativos e das datas de negociação de cada ativo.
+\end{abstract}
+\noindent\textbf{Palavras-chave:} ações; fundos imobiliários; retorno total; dividend yield; patrimônio.
+
+\section{Introdução}
+A comparação entre ações e fundos imobiliários costuma enfatizar indicadores diferentes. Nas ações, observa-se valorização e dividendos; nos FIIs, os rendimentos periódicos. Essa diferença pode produzir conclusões incompletas quando o objetivo é comparar crescimento patrimonial e geração de renda. Uma análise adequada deve considerar o retorno total, incorporando proventos reinvestidos e eventos corporativos.
+
+\subsection{Problema de pesquisa}
+Qual das classes, ações ou fundos imobiliários, apresentou maior capacidade histórica de acumulação patrimonial e qual produziu maior renda potencial ao final de dez anos, sob hipóteses equivalentes de capital inicial e reinvestimento?
+
+\subsection{Objetivos}
+O objetivo geral é comparar o desempenho histórico das duas classes. Especificamente, pretende-se mensurar o retorno total, calcular o CAGR, simular o patrimônio final de um capital inicial de R\$ 10.000,00 por ativo e estimar a renda potencial por meio do dividend yield dos últimos doze meses.
+
+\section{Fundamentação teórica}
+\subsection{Retorno total}
+A variação da cotação isoladamente não captura os valores distribuídos ao investidor. O retorno total considera a valorização e o reinvestimento de proventos. Sua mensuração deve ajustar desdobramentos, grupamentos, subscrições e outros eventos corporativos.
+
+\subsection{Dividend yield}
+O dividend yield de doze meses é definido por
+\[
+DY_T=\frac{\text{proventos por unidade nos últimos 12 meses}}{\text{preço na data }T}.
+\]
+É um indicador retrospectivo e não garante distribuições futuras.
+
+\section{Metodologia}
+A pesquisa é quantitativa, documental e descritiva. O período-alvo é de 30/10/2016 a 30/10/2026, ajustado aos pregões disponíveis. A amostra preliminar contém quinze ações e quinze FIIs. Cada ativo será analisado individualmente, com capital inicial de R\$ 10.000,00.
+
+\subsection{Amostra de ações}
+\begin{center}
+\begin{tabular}{lll}
+\toprule
+Código & Companhia & Setor\\
+\midrule
+PETR4 & Petrobras & Petróleo e gás\\
+VALE3 & Vale & Mineração\\
+ITUB4 & Itaú Unibanco & Bancário\\
+BBAS3 & Banco do Brasil & Bancário\\
+BBDC4 & Bradesco & Bancário\\
+CMIG4 & Cemig & Energia\\
+TAEE11 & Taesa & Energia\\
+EGIE3 & Engie Brasil & Energia\\
+CPFE3 & CPFL Energia & Energia\\
+WEGE3 & WEG & Industrial\\
+ABEV3 & Ambev & Bebidas\\
+ITSA4 & Itaúsa & Holding\\
+BBSE3 & BB Seguridade & Seguros\\
+VIVT3 & Telefônica Brasil & Telecomunicações\\
+GGBR4 & Gerdau & Siderurgia\\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\subsection{Amostra preliminar de FIIs}
+\begin{center}
+\begin{tabular}{lll}
+\toprule
+Código & Fundo & Segmento\\
+\midrule
+HGLG11 & Pátria Logística & Logística\\
+KNRI11 & Kinea Renda Imobiliária & Híbrido\\
+KNCR11 & Kinea Rendimentos Imobiliários & Recebíveis\\
+MXRF11 & Maxi Renda & Híbrido/recebíveis\\
+HGRE11 & Pátria Escritórios & Escritórios\\
+HGBS11 & Hedge Brasil Shopping & Shoppings\\
+BRCR11 & BTG Pactual Corporate Office & Escritórios\\
+JSRE11 & JS Real Estate Multigestão & Híbrido\\
+RNGO11 & Rio Negro & Escritórios\\
+VRTA11 & Fator Verità & Recebíveis\\
+HGCR11 & Pátria Recebíveis & Recebíveis\\
+KNIP11 & Kinea Índices de Preços & Recebíveis\\
+BCRI11 & Banestes Recebíveis & Recebíveis\\
+FIIB11 & Industrial do Brasil & Industrial\\
+FFCI11 & Rio Bravo Renda Corporativa & Escritórios\\
+\bottomrule
+\end{tabular}
+\end{center}
+
+A lista é candidata, não uma recomendação. A data de início de negociação, a continuidade de cada fundo e a disponibilidade de dados serão verificadas individualmente. Ativos encerrados ou incorporados deverão ser registrados para reduzir viés de sobrevivência. Se algum ativo não possuir dez anos completos, será excluído da amostra principal ou analisado separadamente com o período efetivo identificado.
+
+\subsection{Patrimônio acumulado}
+Seja $C_0$ o capital inicial e $R_T$ o retorno total acumulado. O patrimônio final é
+\begin{equation}
+C_T=C_0(1+R_T).
+\end{equation}
+Será adotado $C_0=\text{R\$ }10.000,00$ por ativo.
+
+\subsection{Crescimento anual composto}
+Para um período de $n$ anos:
+\begin{equation}
+CAGR=\left(\frac{C_T}{C_0}\right)^{1/n}-1.
+\end{equation}
+
+\subsection{Renda potencial}
+A renda anual estimada no encerramento será:
+\begin{equation}
+D_T=C_T\cdot DY_T,\qquad D_m=\frac{D_T}{12}.
+\end{equation}
+Essa estimativa não representa os proventos efetivamente recebidos ao longo dos dez anos. Ela aplica o DY recente ao patrimônio hipotético acumulado.
+
+\subsection{Retorno real}
+O retorno real será calculado descontando o IPCA acumulado:
+\begin{equation}
+1+R_{\mathrm{real}}=\frac{1+R_{\mathrm{nominal}}}{1+\pi}.
+\end{equation}
+
+\subsection{Fontes e validação}
+Serão priorizadas fontes primárias e bases com metodologia documentada, incluindo B3, CVM, informes de administradores e provedores de dados. A base Dados B3 declara combinar cotações da B3 e proventos para estimar retorno total. O reinvestimento dos proventos é relevante porque pode alterar substancialmente o resultado em comparação com a simples variação de preço. Cada observação deverá registrar fonte, data de consulta, janela de cálculo e eventos corporativos.
+
+\section{Resultados}
+Os resultados numéricos ainda não foram preenchidos. Não serão inseridos valores sem validação da série de retorno total e do DY na mesma data de referência. A tabela abaixo será completada após a auditoria dos dados.
+
+\begin{longtable}{llrrrr}
+\caption{Quadro de resultados a consolidar}\\
+\toprule
+Classe & Código & Retorno total & CAGR & Patrimônio & DY 12m\\
+\midrule
+\endfirsthead
+\toprule
+Classe & Código & Retorno total & CAGR & Patrimônio & DY 12m\\
+\midrule
+\endhead
+Ação & PETR4 & -- & -- & -- & --\\
+Ação & VALE3 & -- & -- & -- & --\\
+Ação & ITUB4 & -- & -- & -- & --\\
+Ação & BBAS3 & -- & -- & -- & --\\
+Ação & BBDC4 & -- & -- & -- & --\\
+Ação & CMIG4 & -- & -- & -- & --\\
+Ação & TAEE11 & -- & -- & -- & --\\
+Ação & EGIE3 & -- & -- & -- & --\\
+Ação & CPFE3 & -- & -- & -- & --\\
+Ação & WEGE3 & -- & -- & -- & --\\
+Ação & ABEV3 & -- & -- & -- & --\\
+Ação & ITSA4 & -- & -- & -- & --\\
+Ação & BBSE3 & -- & -- & -- & --\\
+Ação & VIVT3 & -- & -- & -- & --\\
+Ação & GGBR4 & -- & -- & -- & --\\
+FII & HGLG11 & -- & -- & -- & --\\
+FII & KNRI11 & -- & -- & -- & --\\
+FII & KNCR11 & -- & -- & -- & --\\
+FII & MXRF11 & -- & -- & -- & --\\
+FII & HGRE11 & -- & -- & -- & --\\
+FII & HGBS11 & -- & -- & -- & --\\
+FII & BRCR11 & -- & -- & -- & --\\
+FII & JSRE11 & -- & -- & -- & --\\
+FII & RNGO11 & -- & -- & -- & --\\
+FII & VRTA11 & -- & -- & -- & --\\
+FII & HGCR11 & -- & -- & -- & --\\
+FII & KNIP11 & -- & -- & -- & --\\
+FII & BCRI11 & -- & -- & -- & --\\
+FII & FIIB11 & -- & -- & -- & --\\
+FII & FFCI11 & -- & -- & -- & --\\
+\bottomrule
+\end{longtable}
+
+\section{Discussão}
+A interpretação deverá separar acumulação patrimonial, renda potencial e risco. Um DY elevado não implica necessariamente melhor investimento: pode decorrer de distribuição extraordinária, queda de cotação ou deterioração dos fundamentos. Também serão considerados volatilidade, perdas máximas, concentração setorial, risco de crédito, vacância e sensibilidade a juros.
+
+\section{Limitações}
+O retorno histórico não garante desempenho futuro. O DY é retrospectivo. Custos, impostos e fricções de reinvestimento podem alterar os resultados. A seleção pode gerar viés de sobrevivência se ativos encerrados forem ignorados. Comparar ativos individualmente não equivale a comparar carteiras diversificadas.
+
+\section{Conclusão}
+O estudo estabelece uma metodologia comum para comparar ações e FIIs a partir do retorno total, crescimento patrimonial e renda potencial. A conclusão empírica será escrita após a consolidação e auditoria das séries históricas, evitando transformar dados incompletos em resultados aparentemente precisos.
+
 \end{document}
